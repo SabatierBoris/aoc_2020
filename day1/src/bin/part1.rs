@@ -9,7 +9,7 @@ fn main() {
             Ok(num) => {
                 let diff = 2020 - num;
                 if numbers.contains(&diff) {
-                    println!("result = {}", num*diff);
+                    println!("result = {}", num * diff);
                     break;
                 } else {
                     numbers.insert(num);
