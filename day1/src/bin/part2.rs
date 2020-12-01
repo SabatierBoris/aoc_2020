@@ -1,7 +1,7 @@
 extern crate day1;
 
-use std::collections::HashSet;
 use std::collections::HashMap;
+use std::collections::HashSet;
 
 fn main() {
     let mut numbers = HashSet::<i32>::new();
@@ -12,11 +12,11 @@ fn main() {
                 let diff = 2020 - num;
                 if tmp_sum.contains_key(&diff) {
                     let val = tmp_sum.get(&diff).unwrap();
-                    println!("result = {}", num*val);
+                    println!("result = {}", num * val);
                     break;
                 } else {
                     for tmp in &numbers {
-                        tmp_sum.insert(num+tmp, tmp*num);
+                        tmp_sum.insert(num + tmp, tmp * num);
                     }
                     numbers.insert(num);
                 };
