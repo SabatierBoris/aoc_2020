@@ -1,4 +1,4 @@
-#Jour 1
+# Jour 1
 
 ## Partie 1
 J'utilise un Set pour se souvenir de tous les nombres déjà lu.
