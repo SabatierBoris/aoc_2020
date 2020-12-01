@@ -28,6 +28,9 @@ jobs:
       matrix: ${{fromJson(needs.prepare.outputs.matrix)}}
     steps:
     - uses: actions/checkout@v2
+    - name: Format
+      run: cargo fmt -- --check
+      working-directory: ${{ matrix.day }}
     - name: Test
       run: cargo test
       working-directory: ${{ matrix.day }}
