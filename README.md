@@ -1,1 +1,3 @@
-# aoc_2020
+# AOC 2020
+
+Cette année j'apprend le Rust \o/
