@@ -21,10 +21,16 @@ jobs:
               JSON=$(ls -d day* | jq -R -s -c 'split("\n")[:-1] | map( {"day": .}) | {"include": .}')
               echo "::set-output name=matrix::${JSON}"
 
-  job2:
+  build:
     needs: prepare
     runs-on: ubuntu-latest
     strategy:
       matrix: ${{fromJson(needs.prepare.outputs.matrix)}}
     steps:
-    - run: echo ${{ matrix.day }}
+    - uses: actions/checkout@v2
+    - name: Test
+      run: cargo test
+      working-directory: ${{ matrix.day }}
+    - name: Build
+      run: cargo build --verbose
+      working-directory: ${{ matrix.day }}
